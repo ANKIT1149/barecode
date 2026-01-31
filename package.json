@@ -1,0 +1,62 @@
+{
+  "name": "barecode",
+  "displayName": "BareCode",
+  "publisher": "aryansh-dev",
+  "description": "Practice real coding interviews by disabling autocomplete, hints, and formatting assistance",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "icon.png",
+
+  "activationEvents": [
+    "onCommand:barecode.enable",
+    "onCommand:barecode.disable"
+  ],
+
+  "main": "./extension.js",
+
+  "contributes": {
+    "commands": [
+      {
+        "command": "barecode.enable",
+        "title": "BareCode: ON"
+      },
+      {
+        "command": "barecode.disable",
+        "title": "BareCode: OFF"
+      }
+    ],
+
+    "keybindings": [
+      {
+        "command": "barecode.enable",
+        "key": "ctrl+alt+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "barecode.disable",
+        "key": "ctrl+alt+shift+i",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.19.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
